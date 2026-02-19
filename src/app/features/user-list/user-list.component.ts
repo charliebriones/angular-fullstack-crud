@@ -17,7 +17,7 @@ import { MatTableDataSource } from '@angular/material/table';
   templateUrl: 'user-list.component.html',
 })
 export class UserList {
-  displayedColumns: string[] = ['id', 'name', 'username', 'email', 'actions'];
+  displayedColumns: string[] = ['name', 'username', 'email', 'actions'];
   userService = inject(UserService);
   dialog = inject(MatDialog);
   router = inject(Router);
