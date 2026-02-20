@@ -1,4 +1,4 @@
-# Angular Fullstack CRUD
+# Angular-CRUD-Full-Stack-Version
 
 This is a sample **Angular Fullstack CRUD** application demonstrating a modern Angular 16+ standalone setup with a .NET Web API backend. It supports **CRUD operations**, uses **Swagger** for API testing, and is configured for **production deployment** to GitHub Pages with a live Azure API.
 
@@ -56,3 +56,4 @@ This is a sample **Angular Fullstack CRUD** application demonstrating a modern A
 ```bash
 git clone https://github.com/charliebriones/angular-fullstack-crud.git
 cd angular-fullstack-crud
+
