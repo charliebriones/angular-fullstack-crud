@@ -1,18 +1,17 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { UserService } from '../../core/services/user.service';
 import { baseImports } from '../../shared/base-imports';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../../shared/modal/confirm-dialog/confirm-dialog.component';
 import { Router } from '@angular/router';
-import { map, Observable } from 'rxjs';
-import { User } from '../../core/models/user.interface';
 import { UserDto } from '../../services/api-client';
 import { MatTableDataSource } from '@angular/material/table';
+import { LoadingScreenComponent } from '../../shared/loading-screen.component/loading-screen.component';
 
 @Component({
   selector: 'user-list',
   standalone: true,
-  imports: [...baseImports],
+  imports: [...baseImports, LoadingScreenComponent],
   styleUrls: ['user-list.component.scss'],
   templateUrl: 'user-list.component.html',
 })
@@ -21,6 +20,7 @@ export class UserList {
   userService = inject(UserService);
   dialog = inject(MatDialog);
   router = inject(Router);
+  loaded = signal(false);
 
   // Use MatTableDataSource instead of Observable for table
   dataSource = new MatTableDataSource<UserDto>([]);
@@ -28,7 +28,10 @@ export class UserList {
   ngOnInit() {
     // Fetch users and update table
     this.userService.getUsers().subscribe((users) => {
+      console.log('users', users);
+      this.loaded.set(true);
       this.dataSource.data = users ?? [];
+      console.log('this.dataSource.data', this.dataSource.data);
     });
   }
 

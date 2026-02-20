@@ -1,1 +1,26 @@
-<router-outlet></router-outlet>
+<mat-toolbar color="primary" class="toolbar">
+  <div class="header-text">
+    <span class="app-title"> User Management System – Full Stack CRUD </span>
+    <span class="deployment-info">
+      Angular (GitHub Pages) • .NET API (Render.com) • Azure SQL Database
+    </span>
+  </div>
+
+  <span class="spacer"></span>
+
+  <a mat-button href="https://github.com/charliebriones/angular-fullstack-crud" target="_blank">
+    Angular Repo
+  </a>
+  &nbsp;|&nbsp;
+  <a mat-button href="https://github.com/charliebriones/UserManagement" target="_blank">
+    API Repo
+  </a>
+  &nbsp;|&nbsp;
+  <a mat-button href="https://usermanagement-mbtm.onrender.com/api/users" target="_blank">
+    API Users
+  </a>
+</mat-toolbar>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
