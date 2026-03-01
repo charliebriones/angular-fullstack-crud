@@ -1,35 +1,36 @@
-/* Make the header look like your React screenshot */
+/* Header */
 .hero-toolbar {
   background: #ffffff !important;
-  color: #0f172a !important; /* slate-900-ish */
-  border-bottom: 1px solid #e2e8f0; /* slate-200-ish */
+  color: #0f172a !important;
+  border-bottom: 1px solid #e2e8f0;
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+
   height: auto;
   padding: 24px 16px;
 }
 
 .hero {
   width: 100%;
-  max-width: 1100px; /* similar to max-w-6xl */
+  max-width: 1100px;
   margin: 0 auto;
+
   display: flex;
   flex-direction: column;
   gap: 6px;
-  
-}
 
-/* Big framework name (but not too big) */
+  min-width: 0; /* 🔥 VERY IMPORTANT for flex wrapping */
+}
 .framework {
   font-size: 32px;
   font-weight: 800;
   letter-spacing: 0.2px;
-  color: #0ea5e9; /* sky-ish */
+  color: #0ea5e9;
   line-height: 1.1;
 }
 
 .title {
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 600;
   color: #0f172a;
   margin-top: 2px;
 }
@@ -37,20 +38,86 @@
 .subtitle {
   font-size: 14px;
   font-weight: 500;
-  color: #334155; /* slate-700-ish */
+  color: #334155;
+  line-height: 1.45;
+
+  white-space: normal;          /* allow wrapping */
+  overflow-wrap: break-word;    /* break long words */
+  word-break: break-word;       /* extra safety */
 }
 
 .actions {
   margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .portal-btn {
   border-radius: 10px;
 }
 
-/* Content spacing like your React layout */
+/* Page content wrapper */
 .content {
   max-width: 1100px;
   margin: 0 auto;
   padding: 24px 16px;
+}
+
+/* ---------- Responsive ---------- */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .hero-toolbar {
+    padding: 18px 14px;
+  }
+
+  .framework {
+    font-size: 28px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .content {
+    padding: 18px 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero-toolbar {
+    padding: 14px 12px;
+  }
+
+  .framework {
+    font-size: 24px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .actions {
+    margin-top: 12px;
+  }
+
+  /* Make the button feel "mobile native" */
+  .portal-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .content {
+    padding: 16px 12px;
+  }
 }

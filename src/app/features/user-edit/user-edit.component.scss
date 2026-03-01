@@ -1,13 +1,20 @@
 .page-card {
-  margin: 24px;
+  margin: 24px auto;
   max-width: 600px;
+}
+
+.page-header {
+  min-width: 0;
+}
+
+.page-content {
+  padding-top: 12px;
 }
 
 .form-layout {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-top: 20px;
 }
 
 mat-form-field {
@@ -17,4 +24,28 @@ mat-form-field {
 .button-container {
   display: flex;
   gap: 12px;
+  flex-wrap: wrap; /* ✅ allows wrap on small screens */
+}
+
+/* Tablet / Mobile */
+@media (max-width: 600px) {
+  .page-card {
+    margin: 12px;
+  }
+
+  .button-container {
+    justify-content: flex-end;
+  }
+}
+
+/* Extra small phones: full-width buttons */
+@media (max-width: 420px) {
+  .button-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button-container button {
+    width: 100%;
+  }
 }

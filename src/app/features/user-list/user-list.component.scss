@@ -1,78 +1,96 @@
-table {
-  width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  margin: 16px 0;
-}
+/* ---------- Layout ---------- */
 
-/* Stronger header */
-.mat-mdc-header-row {
-  background: #1976d2;   /* Material blue */
-}
-
-.mat-mdc-header-cell {
-  color: white;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 16px;
-}
-
-/* Zebra striping (more visible) */
-.mat-mdc-row:nth-child(even) {
-  background: #f0f6ff;
-}
-
-.mat-mdc-row:nth-child(odd) {
-  background: #ffffff;
-}
-
-/* Hover effect (more noticeable) */
-.mat-mdc-row:hover {
-  background: #e3f2fd;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-/* Add subtle border */
-.mat-mdc-row {
-  border-bottom: 1px solid #e0e0e0;
-}
-
-/* Cells */
-.mat-mdc-cell {
-  padding: 16px;
-  font-size: 14px;
-}
-
-/* Action buttons spacing */
-.actions-cell {
-  display: flex;
-  gap: 8px;
-}
-
-/* Card spacing */
 .page-card {
   margin: 24px;
 }
 
-/* Header alignment */
-mat-card-header {
-  padding-bottom: 8px;
+.page-header {
   display: flex;
   align-items: center;
+  gap: 12px;
+  padding-bottom: 8px;
 }
 
 .spacer {
   flex: 1;
 }
 
-/* Clickable row animation */
-.clickable-row {
-  cursor: pointer;
-  transition: all 0.2s ease;
+.page-content {
+  padding-top: 12px;
 }
 
-.clickable-row:hover {
-  background: #bbdefb;
-  transform: scale(1.01);
+/* Mobile spacing + hide button text */
+@media (max-width: 768px) {
+  .page-card {
+    margin: 12px;
+  }
+}
+
+/* ---------- Table responsiveness ---------- */
+/* Wrap table in .table-wrap so small screens can scroll horizontally */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 16px 0;
+  border-radius: 8px;
+}
+
+/* Use your table class instead of styling all <table> globally */
+.users-table {
+  width: 100%;
+  min-width: 720px; /* prevents squished columns; scroll instead */
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* ---------- Material table styling ---------- */
+
+.users-table .mat-mdc-header-row {
+  background: #1976d2;
+}
+
+.users-table .mat-mdc-header-cell {
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 16px;
+}
+
+.users-table .mat-mdc-row {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.users-table .mat-mdc-row:nth-child(even) {
+  background: #f0f6ff;
+}
+
+.users-table .mat-mdc-row:nth-child(odd) {
+  background: #fff;
+}
+
+.users-table .mat-mdc-cell {
+  padding: 16px;
+  font-size: 14px;
+}
+
+/* Hover */
+.users-table .clickable-row {
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.users-table .clickable-row:hover {
+  background: #e3f2fd;
+}
+
+/* Actions column */
+.actions-header {
+  text-align: right;
+}
+
+.actions-cell {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
 }

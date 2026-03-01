@@ -1,10 +1,13 @@
 <mat-card class="page-card">
-  <mat-card-header>
-    <mat-card-title>User {{ !id ? `Add` : `Edit` }}</mat-card-title>
+  <mat-card-header class="page-header">
+    <mat-card-title>User {{ !id ? 'Add' : 'Edit' }}</mat-card-title>
   </mat-card-header>
+
   <mat-divider></mat-divider>
-  <mat-card-content>
-    <form [formGroup]="userFormGroup" (ngSubmit)="createUser()" class="form-layout">
+
+  <!-- ✅ Put actions inside the form so submit works correctly -->
+  <form [formGroup]="userFormGroup" (ngSubmit)="createUser()" class="form-layout">
+    <mat-card-content class="page-content">
       <!-- Name -->
       <mat-form-field appearance="outline">
         <mat-label>Name</mat-label>
@@ -34,19 +37,14 @@
           <mat-error>Email is invalid</mat-error>
         }
       </mat-form-field>
-    </form>
-  </mat-card-content>
+    </mat-card-content>
 
-  <mat-card-actions align="end" class="button-container">
-    <button type="button" mat-stroked-button routerLink="list">Cancel</button>
-    <button
-      type="submit"
-      mat-raised-button
-      color="primary"
-      [disabled]="userFormGroup.invalid"
-      (click)="createUser()"
-    >
-      Save
-    </button>
-  </mat-card-actions>
+    <mat-card-actions align="end" class="button-container">
+      <button type="button" mat-stroked-button routerLink="list">Cancel</button>
+
+      <button type="submit" mat-raised-button color="primary" [disabled]="userFormGroup.invalid">
+        Save
+      </button>
+    </mat-card-actions>
+  </form>
 </mat-card>
