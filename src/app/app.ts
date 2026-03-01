@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MatToolbar } from '@angular/material/toolbar';
-import { MatDivider } from '@angular/material/divider';
+import { baseImports } from './shared/base-imports';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, MatToolbar, MatDivider],
+  imports: [RouterOutlet, CommonModule, ...baseImports],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

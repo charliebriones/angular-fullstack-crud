@@ -1,57 +1,29 @@
-<mat-toolbar color="primary" class="toolbar">
-  <div class="header-text">
-    <span class="app-title">User Management System – Full Stack CRUD</span>
-    <span class="deployment-info">
-      Angular (GitHub Pages) • .NET API (Render.com) • Azure SQL Database
-    </span>
-  </div>
-</mat-toolbar>
+<!-- Hero Header -->
+<mat-toolbar class="hero-toolbar" role="banner">
+  <div class="hero">
+    <div class="framework">Angular</div>
 
-<div class="content">
-  <router-outlet></router-outlet>
+    <div class="title">User Management System</div>
 
-  <!-- Stylish Footer Section -->
-  <div class="footer-links">
-    <mat-divider></mat-divider>
+    <div class="subtitle">
+      Angular + Router + HttpClient consuming the same .NET API backend (Render + Azure SQL).
+    </div>
 
-    <h3 class="footer-title">Project Resources</h3>
-
-    <div class="links-container">
+    <div class="actions">
       <a
-        class="resource-link"
-        href="https://charliebriones.github.io/angular-local-crud/"
+        mat-stroked-button
+        class="portal-btn"
+        href="https://charliebriones.github.io/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        View Frontend-Only (In-Memory CRUD)
-      </a>
-
-      <a
-        class="resource-link"
-        href="https://github.com/charliebriones/angular-fullstack-crud"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Angular Repository
-      </a>
-
-      <a
-        class="resource-link"
-        href="https://github.com/charliebriones/UserManagement"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        .NET API Repository
-      </a>
-
-      <a
-        class="resource-link"
-        href="https://usermanagement-mbtm.onrender.com/api/users"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Live API Endpoint
+        Portal
       </a>
     </div>
   </div>
+</mat-toolbar>
+
+<!-- Page Content -->
+<div class="content">
+  <router-outlet></router-outlet>
 </div>
