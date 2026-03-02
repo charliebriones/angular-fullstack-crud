@@ -7,9 +7,7 @@
     @if (user$ | async; as user) {
       <div class="header-actions">
         <button mat-stroked-button routerLink="/users">Back</button>
-        <button mat-raised-button color="primary" [routerLink]="['/users/edit', user.id]">
-          Edit
-        </button>
+        <button mat-raised-button color="primary" [routerLink]="['/edit/', user.id]">Edit</button>
       </div>
     }
   </mat-card-header>
